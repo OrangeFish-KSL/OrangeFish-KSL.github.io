@@ -87,18 +87,18 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 
 
 
-<meta name="description" content="##hdu2036给N个点算多边形的面积多边形面积用公式S=0.5abs(x1y2-y1x2+x2y3-y2x3+…+xny1-ynx1)要分两部分，1：x1y2-y1x2  2:xny1-yn*x1;12345678910111213141516171819202122232425#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;algorithm&amp;gt;#include&amp;l">
+<meta name="description" content="hdu2036给N个点算多边形的面积多边形面积用公式S=0.5abs(x1y2-y1x2+x2y3-y2x3+…+xny1-ynx1)要分两部分，1：x1y2-y1x2  2:xny1-yn*x1;12345678910111213141516171819202122232425#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;algorithm&amp;gt;#include&amp;lt;">
 <meta name="keywords" content="编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用头文件及使用方法">
 <meta property="og:url" content="http://yoursite.com/2018/06/16/数学公式/index.html">
 <meta property="og:site_name" content="orangefish-ksl">
-<meta property="og:description" content="##hdu2036给N个点算多边形的面积多边形面积用公式S=0.5abs(x1y2-y1x2+x2y3-y2x3+…+xny1-ynx1)要分两部分，1：x1y2-y1x2  2:xny1-yn*x1;12345678910111213141516171819202122232425#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;algorithm&amp;gt;#include&amp;l">
+<meta property="og:description" content="hdu2036给N个点算多边形的面积多边形面积用公式S=0.5abs(x1y2-y1x2+x2y3-y2x3+…+xny1-ynx1)要分两部分，1：x1y2-y1x2  2:xny1-yn*x1;12345678910111213141516171819202122232425#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;algorithm&amp;gt;#include&amp;lt;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-16T11:41:28.113Z">
+<meta property="og:updated_time" content="2018-06-16T12:00:34.031Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用头文件及使用方法">
-<meta name="twitter:description" content="##hdu2036给N个点算多边形的面积多边形面积用公式S=0.5abs(x1y2-y1x2+x2y3-y2x3+…+xny1-ynx1)要分两部分，1：x1y2-y1x2  2:xny1-yn*x1;12345678910111213141516171819202122232425#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;algorithm&amp;gt;#include&amp;l">
+<meta name="twitter:description" content="hdu2036给N个点算多边形的面积多边形面积用公式S=0.5abs(x1y2-y1x2+x2y3-y2x3+…+xny1-ynx1)要分两部分，1：x1y2-y1x2  2:xny1-yn*x1;12345678910111213141516171819202122232425#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;algorithm&amp;gt;#include&amp;lt;">
 
 
 
@@ -350,7 +350,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
       
 
       
-        <p>##hdu2036<br>给N个点算多边形的面积<br>多边形面积用公式<br>S=0.5<em>abs(x1</em>y2-y1<em>x2+x2</em>y3-y2<em>x3+…+xn</em>y1-yn<em>x1)<br>要分两部分，1：x1</em>y2-y1<em>x2  2:xn</em>y1-yn*x1;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int X[1000];</span><br><span class="line">    int Y[1000];</span><br><span class="line">    int n;</span><br><span class="line">    while(~scanf(&quot;%d&quot;,&amp;n))</span><br><span class="line">    &#123;</span><br><span class="line">        if(n==0)break;</span><br><span class="line">        int i=0;</span><br><span class="line">        for(i=0;i&lt;n;i++)</span><br><span class="line">            scanf(&quot;%d%d&quot;,&amp;X[i],&amp;Y[i]);</span><br><span class="line">        double s=0;</span><br><span class="line">        for(i=0;i&lt;n-1;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            s+=X[i]*Y[i+1]-X[i+1]*Y[i];</span><br><span class="line">        &#125;</span><br><span class="line">        s+=X[n-1]*Y[0]-X[0]*Y[n-1];</span><br><span class="line">        printf(&quot;%.1f\n&quot;,0.5*abs(s));</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h2 id="hdu2036"><a href="#hdu2036" class="headerlink" title="hdu2036"></a>hdu2036</h2><p>给N个点算多边形的面积<br>多边形面积用公式<br>S=0.5<em>abs(x1</em>y2-y1<em>x2+x2</em>y3-y2<em>x3+…+xn</em>y1-yn<em>x1)<br>要分两部分，1：x1</em>y2-y1<em>x2  2:xn</em>y1-yn*x1;<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> X[<span class="number">1000</span>];</span><br><span class="line">    <span class="keyword">int</span> Y[<span class="number">1000</span>];</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;X[i],&amp;Y[i]);</span><br><span class="line">        <span class="keyword">double</span> s=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            s+=X[i]*Y[i+<span class="number">1</span>]-X[i+<span class="number">1</span>]*Y[i];</span><br><span class="line">        &#125;</span><br><span class="line">        s+=X[n<span class="number">-1</span>]*Y[<span class="number">0</span>]-X[<span class="number">0</span>]*Y[n<span class="number">-1</span>];</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%.1f\n"</span>,<span class="number">0.5</span>*<span class="built_in">abs</span>(s));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -450,8 +450,17 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -515,6 +524,22 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hdu2036"><span class="nav-number">1.</span> <span class="nav-text">hdu2036</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
