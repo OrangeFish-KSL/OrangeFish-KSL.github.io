@@ -1267,12 +1267,12 @@ pre .javascript .function {
 .use-motion .collection-title {
   opacity: 0;
 }
-.post-body {
+.post-body p a {
   color: #9932cc;
   border-bottom: none;
   border-bottom: 1px solid #9932cc;
 }
-.post-body:hover {
+.post-body p a:hover {
   color: #9932cc;
   border-bottom: none;
   border-bottom: 1px solid #9932cc;
@@ -1833,7 +1833,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #5cffff;
+  background: #26d594;
 }
 .links-of-blogroll {
   font-size: 13px;
