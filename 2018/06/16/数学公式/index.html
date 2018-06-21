@@ -76,7 +76,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 
 
 
-  <meta name="keywords" content="编程," />
+  <meta name="keywords" content="编程,数学," />
 
 
 
@@ -88,16 +88,16 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 
 
 <meta name="description" content="一些数学公式，排列组合，立体几何，平面几何等等。">
-<meta name="keywords" content="编程">
+<meta name="keywords" content="编程,数学">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数学公式">
+<meta property="og:title" content="数学">
 <meta property="og:url" content="http://yoursite.com/2018/06/16/数学公式/index.html">
 <meta property="og:site_name" content="orangefish-ksl">
 <meta property="og:description" content="一些数学公式，排列组合，立体几何，平面几何等等。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-21T12:16:32.479Z">
+<meta property="og:updated_time" content="2018-06-21T12:26:41.959Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数学公式">
+<meta name="twitter:title" content="数学">
 <meta name="twitter:description" content="一些数学公式，排列组合，立体几何，平面几何等等。">
 
 
@@ -134,7 +134,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 
 
 
-  <title>数学公式 | orangefish-ksl</title>
+  <title>数学 | orangefish-ksl</title>
   
 
 
@@ -278,7 +278,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 
         
         
-          <h1 class="post-title" itemprop="name headline">数学公式</h1>
+          <h1 class="post-title" itemprop="name headline">数学</h1>
         
 
         <div class="post-meta">
@@ -351,6 +351,15 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 
       
         <p>一些数学公式，排列组合，立体几何，平面几何等等。<br><a id="more"></a></p>
+<h2 id="分割类"><a href="#分割类" class="headerlink" title="分割类"></a>分割类</h2><h3 id="n条直线最多分平面问题"><a href="#n条直线最多分平面问题" class="headerlink" title="n条直线最多分平面问题"></a>n条直线最多分平面问题</h3><p>题目大致如:n条直线，最多可以把平面分为多少个区域。</p>
+<p>析:可能你以前就见过这题目，这充其量是一道初中的思考题。但一个类型的题目还是从简单的入手，才容易发现规律。当有n-1条直线时，平面最多被分成了f（n-1）个区域。则第n条直线要是切成的区域数最多，就必须与每条直线相交且不能有同一交点。这样就会得到n-1个交点。这些交点将第n条直线分为2条射线和n-2条线断。而每条射线和线断将以有的区域一分为二。这样就多出了2+（n-2）个区域。</p>
+<p>故：f(n)=f(n-1)+n<br>        =f(n-2)+(n-1)+n……<br>        =f(1)+1+2+……+n<br>        =n(n+1)/2+1</p>
+<h3 id="折线分平面（hdu2050）"><a href="#折线分平面（hdu2050）" class="headerlink" title="折线分平面（hdu2050）"></a>折线分平面（hdu2050）</h3><p>根据直线分平面可知，由交点决定了射线和线段的条数，进而决定了新增的区域数。当n-1条折线时，区域数为f（n-1）。为了使增加的区域最多，则折线的两边的线段要和n-1条折线的边，即2<em>（n-1）条线段相交。那么新增的线段数为4</em>（n-1），射线数为2。但要注意的是，折线本身相邻的两线段只能增加一个区域。</p>
+<p>故：f(n)=f(n-1)+4(n-1)+2-1<br>       =f(n-1)+4(n-1)+1<br>       =f(n-2)+4(n-2)+4(n-1)+2……<br>       =f(1)+4+4*2+……+4(n-1)+(n-1)<br>       =2n^2-n+1</p>
+<h3 id="封闭曲线分平面问题"><a href="#封闭曲线分平面问题" class="headerlink" title="封闭曲线分平面问题"></a>封闭曲线分平面问题</h3><p>题目大致如设有n条封闭曲线画在平面上，而任何两条封闭曲线恰好相交于两点，且任何三条封闭曲线不相交于同一点，问这些封闭曲线把平面分割成的区域个数。<br>析：当n-1个圆时，区域数为f(n-1).那么第n个圆就必须与前n-1个圆相交，则第n个圆被分为2（n-1）段线段，增加了2（n-1）个区域。</p>
+<p>故： f(n)=f(n-1)+2(n-1)<br>=f(1)+2+4+……+2(n-1)<br>=n^2-n+2</p>
+<h3 id="平面分割空间问题（hdu1290）"><a href="#平面分割空间问题（hdu1290）" class="headerlink" title="平面分割空间问题（hdu1290）"></a>平面分割空间问题（hdu1290）</h3><p>由二维的分割问题可知，平面分割与线之间的交点有关，即交点决定射线和线段的条数，从而决定新增的区域数。试想在三维中则是否与平面的交线有关呢？当有n-1个平面时，分割的空间数为f（n-1）。要有最多的空间数，则第n个平面需与前n-1个平面相交，且不能有共同的交线。即最多有n-1 条交线。而这n-1条交线把第n个平面最多分割成g（n-1）个区域。（g（n）为（1）中的直线分平面的个数）此平面将原有的空间一分为二，则最多增加g（n-1）个空间。</p>
+<p>故：f=f(n-1)+g(n-1)    ps:g(n)=n(n+1)/2+1<br>     =f(n-2)+g(n-2)+g(n-1) ……<br>     =f(1)+g(1)+g(2)+……+g(n-1)<br>     =2+(1<em>2+2</em>3+3*4+……+(n-1)n)/2+（n-1）<br>     =(1+2^2+3^2+4^2+……+n^2-1-2-3-……-n )/2+n+1<br>     =(n^3+5n)/6+1</p>
 <h2 id="hdu2036"><a href="#hdu2036" class="headerlink" title="hdu2036"></a>hdu2036</h2><p>给N个点算多边形的面积<br>多边形面积用公式<br>S=0.5<em>abs(x1</em>y2-y1<em>x2+x2</em>y3-y2<em>x3+…+xn</em>y1-yn<em>x1)<br>要分两部分，1：x1</em>y2-y1<em>x2  2:xn</em>y1-yn*x1;<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> X[<span class="number">1000</span>];</span><br><span class="line">    <span class="keyword">int</span> Y[<span class="number">1000</span>];</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;X[i],&amp;Y[i]);</span><br><span class="line">        <span class="keyword">double</span> s=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            s+=X[i]*Y[i+<span class="number">1</span>]-X[i+<span class="number">1</span>]*Y[i];</span><br><span class="line">        &#125;</span><br><span class="line">        s+=X[n<span class="number">-1</span>]*Y[<span class="number">0</span>]-X[<span class="number">0</span>]*Y[n<span class="number">-1</span>];</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%.1f\n"</span>,<span class="number">0.5</span>*<span class="built_in">abs</span>(s));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="hdu2048"><a href="#hdu2048" class="headerlink" title="hdu2048"></a>hdu2048</h2><p>全错拍，给N个空要求每个空的的编号与插入的元素编号不同<br>公式：a(n) = (n-1)*(a(n-1) + a(n-2))<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;  </span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">int</span>  c, n, j;  </span><br><span class="line">    <span class="keyword">double</span> sum, i, a[<span class="number">21</span>];  </span><br><span class="line">    a[<span class="number">1</span>] = <span class="number">0</span>;  </span><br><span class="line">    a[<span class="number">2</span>] = <span class="number">1</span>;  </span><br><span class="line">    <span class="keyword">for</span>(j = <span class="number">3</span>; j &lt; <span class="number">21</span>; j++)  </span><br><span class="line">        a[j] = (j - <span class="number">1</span>) * (a[j<span class="number">-1</span>] + a[j<span class="number">-2</span>]);  </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;c);  </span><br><span class="line">    <span class="keyword">while</span> (c--)  </span><br><span class="line">    &#123;  </span><br><span class="line">        sum = <span class="number">1</span>;  </span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);  </span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">1</span>; i &lt;= n; i++)  </span><br><span class="line">            sum *= i;  </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%.2lf%%\n"</span>, a[n]/sum*<span class="number">100</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
@@ -380,6 +389,8 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
         <div class="post-tags">
           
             <a href="/tags/编程/" rel="tag"><i class="fa fa-tag"></i>  编程</a>
+          
+            <a href="/tags/数学/" rel="tag"><i class="fa fa-tag"></i>  数学</a>
           
         </div>
       
@@ -507,7 +518,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -540,7 +551,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hdu2036"><span class="nav-number">1.</span> <span class="nav-text">hdu2036</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hdu2048"><span class="nav-number">2.</span> <span class="nav-text">hdu2048</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分割类"><span class="nav-number">1.</span> <span class="nav-text">分割类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#n条直线最多分平面问题"><span class="nav-number">1.1.</span> <span class="nav-text">n条直线最多分平面问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#折线分平面（hdu2050）"><span class="nav-number">1.2.</span> <span class="nav-text">折线分平面（hdu2050）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#封闭曲线分平面问题"><span class="nav-number">1.3.</span> <span class="nav-text">封闭曲线分平面问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平面分割空间问题（hdu1290）"><span class="nav-number">1.4.</span> <span class="nav-text">平面分割空间问题（hdu1290）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hdu2036"><span class="nav-number">2.</span> <span class="nav-text">hdu2036</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hdu2048"><span class="nav-number">3.</span> <span class="nav-text">hdu2048</span></a></li></ol></div>
             
 
           </div>
